@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace proyecto_final
 {
     public partial class Edita : Form
     {
+        static string agendotastring = "data source = LAPTOP-8HDRD3GH\\SQLEXPRESS; database= agendota; integrated security= true";
+        SqlConnection agendota = new SqlConnection(agendotastring);
+
         public Edita()
         {
             InitializeComponent();
@@ -149,7 +153,10 @@ namespace proyecto_final
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            string agendotica = "Insert into edita ([Nombre] ,[Apellido] ,[Puesto] ,[Numtel], [Correo], [Nota]) " +
+                " values ('','','','','','')";
+            SqlCommand comando = new SqlCommand(agendotica, agendota);
+            comando.ExecuteNonQuery();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
