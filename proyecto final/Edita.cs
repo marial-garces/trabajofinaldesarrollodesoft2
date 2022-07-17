@@ -153,10 +153,11 @@ namespace proyecto_final
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string agendotica = "Insert into edita ([Nombre] ,[Apellido] ,[Puesto] ,[Numtel], [Correo], [Nota]) " +
-                " values ('','','','','','')";
-            SqlCommand comando = new SqlCommand(agendotica, agendota);
-            comando.ExecuteNonQuery();
+            string agendotica = "Insert into edita ([Apodo] ,[Nombre1] ,[Nombre2] ,[Apellidos], [Profesion], [Iniciales], [Telefono1], [Telefono2], [Correo], [Nota]) " +
+                " values ('"+txtApodo+"','"+txtNombre1+"','"+txtNombre2+"','"+txtApellidos+"','"+txtProfesion+"','"+txtIniciales+ "','"+txtCasa+ "','"+txtCell+ "','"+txtEmail+ "','"+txtNota+"')";
+            SqlCommand agendototica = new SqlCommand(agendotica, agendota);
+            agendototica.ExecuteNonQuery();
+            string correo = txtEmail.Text;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
