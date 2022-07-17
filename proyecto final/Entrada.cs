@@ -16,5 +16,10 @@ namespace proyecto_final
         {
             InitializeComponent();
         }
+
+        private void g_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
