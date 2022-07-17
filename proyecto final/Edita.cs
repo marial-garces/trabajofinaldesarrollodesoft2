@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace proyecto_final
 {
-    public partial class Form1 : Form
+    public partial class Edita : Form
     {
-        public Form1()
+        public Edita()
         {
             InitializeComponent();
         }
@@ -58,6 +58,11 @@ namespace proyecto_final
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }
