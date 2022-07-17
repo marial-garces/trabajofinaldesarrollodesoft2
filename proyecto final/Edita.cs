@@ -66,5 +66,115 @@ namespace proyecto_final
         {
 
         }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNota_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCell_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCasa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIniciales_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProfesion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApellidos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApodo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPhoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbContact_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
