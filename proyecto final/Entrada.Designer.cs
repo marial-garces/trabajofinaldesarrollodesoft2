@@ -101,6 +101,7 @@
             this.BotonAgregar.TabIndex = 33;
             this.BotonAgregar.Text = "Agregar";
             this.BotonAgregar.UseVisualStyleBackColor = true;
+            this.BotonAgregar.Click += new System.EventHandler(this.BotonAgregar_Click);
             // 
             // BotonCancelar
             // 
@@ -111,6 +112,7 @@
             this.BotonCancelar.TabIndex = 34;
             this.BotonCancelar.Text = "Cancelar";
             this.BotonCancelar.UseVisualStyleBackColor = true;
+            this.BotonCancelar.Click += new System.EventHandler(this.BotonCancelar_Click);
             // 
             // ContactosGridView1
             // 

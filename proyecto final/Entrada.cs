@@ -26,9 +26,20 @@ namespace proyecto_final
             Openform.Show();
         }
 
+        private void BotonAgregar_Click(object sender, EventArgs e)
+        {
+            Edita Aedita = new Edita();
+            Aedita.Show();
+        }
+
         private void BusquedaContantoCB_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BotonCancelar_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
