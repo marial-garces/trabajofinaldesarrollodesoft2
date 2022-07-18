@@ -56,12 +56,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pbPic = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtEdit = new System.Windows.Forms.Button();
-            this.pbPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCont)).BeginInit();
             this.gbContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
@@ -102,6 +102,7 @@
             // 
             // btnSave
             // 
+            this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(153, 481);
             this.btnSave.Name = "btnSave";
@@ -113,6 +114,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Enabled = false;
             this.btnCancel.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(294, 481);
             this.btnCancel.Name = "btnCancel";
@@ -157,6 +159,7 @@
             this.gbContact.Controls.Add(this.label3);
             this.gbContact.Controls.Add(this.label2);
             this.gbContact.Controls.Add(this.pbPic);
+            this.gbContact.Enabled = false;
             this.gbContact.Location = new System.Drawing.Point(13, 74);
             this.gbContact.Name = "gbContact";
             this.gbContact.Size = new System.Drawing.Size(508, 401);
@@ -345,6 +348,16 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Apodo";
             // 
+            // pbPic
+            // 
+            this.pbPic.Image = global::proyecto_final.Properties.Resources.contact;
+            this.pbPic.Location = new System.Drawing.Point(11, 32);
+            this.pbPic.Name = "pbPic";
+            this.pbPic.Size = new System.Drawing.Size(135, 134);
+            this.pbPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPic.TabIndex = 37;
+            this.pbPic.TabStop = false;
+            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(714, 94);
@@ -391,16 +404,6 @@
             this.txtEdit.UseVisualStyleBackColor = true;
             this.txtEdit.Click += new System.EventHandler(this.txtEdit_Click);
             // 
-            // pbPic
-            // 
-            this.pbPic.Image = global::proyecto_final.Properties.Resources.contact;
-            this.pbPic.Location = new System.Drawing.Point(11, 32);
-            this.pbPic.Name = "pbPic";
-            this.pbPic.Size = new System.Drawing.Size(135, 134);
-            this.pbPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPic.TabIndex = 37;
-            this.pbPic.TabStop = false;
-            // 
             // Edita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,7 +423,7 @@
             this.Controls.Add(this.dgvCont);
             this.Controls.Add(this.label1);
             this.Name = "Edita";
-            this.Text = "Form1";
+            this.Text = "Contact Data";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCont)).EndInit();
             this.gbContact.ResumeLayout(false);

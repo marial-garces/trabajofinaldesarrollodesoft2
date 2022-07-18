@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace proyecto_final
 {
@@ -18,26 +12,26 @@ namespace proyecto_final
 
         private void obtener()
         {
-         
 
-             if (txtBuscar.Text == "")
-             {
-                 string query = "select * from edita";
+
+            if (txtBuscar.Text == "")
+            {
+                string query = "select * from edita";
                 SqlCommand agendototica = new SqlCommand(query, agendota);
-                 SqlDataAdapter data = new SqlDataAdapter(agendototica);
-                 DataTable editica = new DataTable();
-                 data.Fill(editica);
-                 dgvCont.DataSource = editica;
-             }
-             else
-             {
-                 string query = "select * from edita where Nombre ='" + txtBuscar.Text + "'";
+                SqlDataAdapter data = new SqlDataAdapter(agendototica);
+                DataTable editica = new DataTable();
+                data.Fill(editica);
+                dgvCont.DataSource = editica;
+            }
+            else
+            {
+                string query = "select * from edita where Nombre ='" + txtBuscar.Text + "'";
                 SqlCommand agendototica = new SqlCommand(query, agendota);
-                 SqlDataAdapter data = new SqlDataAdapter(agendototica);
-                 DataTable editica = new DataTable();
-                 data.Fill(editica);
-                 dgvCont.DataSource = editica;
-             }
+                SqlDataAdapter data = new SqlDataAdapter(agendototica);
+                DataTable editica = new DataTable();
+                data.Fill(editica);
+                dgvCont.DataSource = editica;
+            }
         }
 
         public Edita()
@@ -48,7 +42,7 @@ namespace proyecto_final
         private void Form1_Load(object sender, EventArgs e)
         {
             obtener();
-           agendota.Open();
+            agendota.Open();
 
         }
 
@@ -174,12 +168,15 @@ namespace proyecto_final
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            gbContact.Enabled = true;
+            btnAdd.Enabled = false;
+            btnCancel.Enabled = true;
+            btnSave.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-       
+
             string correo = txtEmail.Text;
             Int64 NUMERO1;
             NUMERO1 = Int64.Parse(txtCell.Text);
@@ -187,17 +184,36 @@ namespace proyecto_final
             NUMERO2 = Int64.Parse(txtCasa.Text);
 
             string agendotica = "Insert into edita ([Apodo] ,[Nombre1] ,[Nombre2] ,[Apellidos], [Profesion], [Iniciales], [Telefono1], [Telefon2], [Correo], [Nota]) " +
-                " values ('"+txtApodo.Text+"','"+txtNombre1.Text+"','"+txtNombre2.Text+"','"+txtApellidos.Text+"','"+txtProfesion.Text+"','"+txtIniciales.Text+ "','"+NUMERO2+ "','"+NUMERO1+"', '"+correo+ "','"+txtNota.Text+"')";
+                " values ('" + txtApodo.Text + "','" + txtNombre1.Text + "','" + txtNombre2.Text + "','" + txtApellidos.Text + "','" + txtProfesion.Text + "','" + txtIniciales.Text + "','" + NUMERO2 + "','" + NUMERO1 + "', '" + correo + "','" + txtNota.Text + "')";
             SqlCommand agendototica = new SqlCommand(agendotica, agendota);
             agendototica.ExecuteNonQuery();
             MessageBox.Show("Guardado Exitosamente");
 
             obtener();
+
+            gbContact.Enabled = false;
+            btnAdd.Enabled = true;
+            btnCancel.Enabled = false;
+            btnSave.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            empty();
+        }
 
+        private void empty()
+        {
+            txtApodo.Text = null;
+            txtNombre1.Text = null;
+            txtNombre2.Text = null;
+            txtApellidos.Text = null;
+            txtProfesion.Text = null;
+            txtIniciales.Text = null;
+            txtCasa.Text = null;
+            txtCell.Text = null;
+            txtEmail.Text = null;
+            txtNota.Text = null;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -207,8 +223,8 @@ namespace proyecto_final
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           string queri = "Delete from edita Where Id = @Id";
-            SqlCommand comando = new SqlCommand(queri, agendota );
+            string queri = "Delete from edita Where Id = @Id";
+            SqlCommand comando = new SqlCommand(queri, agendota);
             comando.Parameters.AddWithValue("@Id", txtId.Text);
             comando.ExecuteNonQuery();
             MessageBox.Show("Borrado");
@@ -216,10 +232,7 @@ namespace proyecto_final
 
         }
 
-        private void btnPhoto_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void gbContact_Enter(object sender, EventArgs e)
         {
@@ -275,7 +288,7 @@ namespace proyecto_final
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

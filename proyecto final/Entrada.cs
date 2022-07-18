@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace proyecto_final
@@ -21,5 +14,18 @@ namespace proyecto_final
         {
 
         }
+
+        private void Entrada_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BotonBusqueda_Click(object sender, EventArgs e)
+        {
+            var Openform = new Edita();
+            Openform.Show();
+        }
+
+        
     }
 }

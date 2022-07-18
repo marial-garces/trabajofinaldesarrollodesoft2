@@ -70,6 +70,7 @@
             // 
             // GroupBoxBusqueda
             // 
+            this.GroupBoxBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.GroupBoxBusqueda.Controls.Add(this.BotonBusqueda);
             this.GroupBoxBusqueda.Controls.Add(this.BusquedaContantoCB);
             this.GroupBoxBusqueda.Controls.Add(this.NombreAgregar);
@@ -89,6 +90,7 @@
             this.BotonBusqueda.TabIndex = 32;
             this.BotonBusqueda.Text = "Buscar";
             this.BotonBusqueda.UseVisualStyleBackColor = true;
+            this.BotonBusqueda.Click += new System.EventHandler(this.BotonBusqueda_Click);
             // 
             // BotonAgregar
             // 
@@ -113,6 +115,7 @@
             // ContactosGridView1
             // 
             this.ContactosGridView1.AllowUserToOrderColumns = true;
+            this.ContactosGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ContactosGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ContactosGridView1.Location = new System.Drawing.Point(12, 191);
             this.ContactosGridView1.Name = "ContactosGridView1";
@@ -123,6 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(490, 515);
             this.Controls.Add(this.ContactosGridView1);
             this.Controls.Add(this.BotonCancelar);
@@ -131,6 +135,7 @@
             this.Controls.Add(this.TituloContacts);
             this.Name = "Entrada";
             this.Text = "Entrada";
+            this.Load += new System.EventHandler(this.Entrada_Load);
             this.GroupBoxBusqueda.ResumeLayout(false);
             this.GroupBoxBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ContactosGridView1)).EndInit();
