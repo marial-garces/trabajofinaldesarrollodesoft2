@@ -49,7 +49,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnPhoto = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,9 +56,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbPic = new System.Windows.Forms.PictureBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtEdit = new System.Windows.Forms.Button();
+            this.pbPic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCont)).BeginInit();
             this.gbContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
@@ -77,12 +79,14 @@
             // 
             // dgvCont
             // 
+            this.dgvCont.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgvCont.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCont.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCont.Location = new System.Drawing.Point(527, 130);
             this.dgvCont.Name = "dgvCont";
             this.dgvCont.Size = new System.Drawing.Size(496, 345);
             this.dgvCont.TabIndex = 24;
+            this.dgvCont.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCont_CellContentClick);
             this.dgvCont.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCont_CellContentClick);
             // 
             // btnAdd
@@ -121,7 +125,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(714, 481);
+            this.btnDelete.Location = new System.Drawing.Point(834, 481);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(135, 38);
             this.btnDelete.TabIndex = 39;
@@ -145,7 +149,6 @@
             this.gbContact.Controls.Add(this.label13);
             this.gbContact.Controls.Add(this.label12);
             this.gbContact.Controls.Add(this.label11);
-            this.gbContact.Controls.Add(this.btnPhoto);
             this.gbContact.Controls.Add(this.label9);
             this.gbContact.Controls.Add(this.label8);
             this.gbContact.Controls.Add(this.label7);
@@ -273,16 +276,6 @@
             this.label11.TabIndex = 46;
             this.label11.Text = "Telefono de casa";
             // 
-            // btnPhoto
-            // 
-            this.btnPhoto.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhoto.Location = new System.Drawing.Point(11, 217);
-            this.btnPhoto.Name = "btnPhoto";
-            this.btnPhoto.Size = new System.Drawing.Size(135, 38);
-            this.btnPhoto.TabIndex = 45;
-            this.btnPhoto.Text = "Agregar foto";
-            this.btnPhoto.UseVisualStyleBackColor = true;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -352,14 +345,6 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Apodo";
             // 
-            // pbPic
-            // 
-            this.pbPic.Location = new System.Drawing.Point(11, 32);
-            this.pbPic.Name = "pbPic";
-            this.pbPic.Size = new System.Drawing.Size(135, 173);
-            this.pbPic.TabIndex = 37;
-            this.pbPic.TabStop = false;
-            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(714, 94);
@@ -378,11 +363,53 @@
             this.label6.TabIndex = 60;
             this.label6.Text = "Buscar";
             // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(756, 492);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(63, 20);
+            this.txtId.TabIndex = 60;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(730, 494);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 18);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Id";
+            // 
+            // txtEdit
+            // 
+            this.txtEdit.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdit.Location = new System.Drawing.Point(586, 481);
+            this.txtEdit.Name = "txtEdit";
+            this.txtEdit.Size = new System.Drawing.Size(135, 38);
+            this.txtEdit.TabIndex = 62;
+            this.txtEdit.Text = "Editar";
+            this.txtEdit.UseVisualStyleBackColor = true;
+            this.txtEdit.Click += new System.EventHandler(this.txtEdit_Click);
+            // 
+            // pbPic
+            // 
+            this.pbPic.Image = global::proyecto_final.Properties.Resources.contact;
+            this.pbPic.Location = new System.Drawing.Point(11, 32);
+            this.pbPic.Name = "pbPic";
+            this.pbPic.Size = new System.Drawing.Size(135, 134);
+            this.pbPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPic.TabIndex = 37;
+            this.pbPic.TabStop = false;
+            // 
             // Edita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(1035, 523);
+            this.Controls.Add(this.txtEdit);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gbContact);
@@ -427,7 +454,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnPhoto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -438,6 +464,9 @@
         private System.Windows.Forms.PictureBox pbPic;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button txtEdit;
     }
 }
 

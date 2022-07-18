@@ -18,6 +18,8 @@ namespace proyecto_final
 
         private void obtener()
         {
+         
+
              if (txtBuscar.Text == "")
              {
                  string query = "select * from edita";
@@ -42,7 +44,7 @@ namespace proyecto_final
         {
             InitializeComponent();
         }
-
+        public int baseC;
         private void Form1_Load(object sender, EventArgs e)
         {
             obtener();
@@ -188,6 +190,7 @@ namespace proyecto_final
                 " values ('"+txtApodo.Text+"','"+txtNombre1.Text+"','"+txtNombre2.Text+"','"+txtApellidos.Text+"','"+txtProfesion.Text+"','"+txtIniciales.Text+ "','"+NUMERO2+ "','"+NUMERO1+"', '"+correo+ "','"+txtNota.Text+"')";
             SqlCommand agendototica = new SqlCommand(agendotica, agendota);
             agendototica.ExecuteNonQuery();
+            MessageBox.Show("Guardado Exitosamente");
 
             obtener();
         }
@@ -204,6 +207,12 @@ namespace proyecto_final
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+           string queri = "Delete from edita Where Id = @Id";
+            SqlCommand comando = new SqlCommand(queri, agendota );
+            comando.Parameters.AddWithValue("@Id", txtId.Text);
+            comando.ExecuteNonQuery();
+            MessageBox.Show("Borrado");
+            obtener();
 
         }
 
@@ -219,12 +228,54 @@ namespace proyecto_final
 
         private void dgvCont_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            baseC = Convert.ToInt32(dgvCont.Rows[0].Cells[0].Value);
+            txtApodo.Text = dgvCont.SelectedRows[0].Cells[1].Value.ToString();
+            txtNombre1.Text = dgvCont.SelectedRows[0].Cells[2].Value.ToString();
+            txtNombre2.Text = dgvCont.SelectedRows[0].Cells[3].Value.ToString();
+            txtApellidos.Text = dgvCont.SelectedRows[0].Cells[4].Value.ToString();
+            txtProfesion.Text = dgvCont.SelectedRows[0].Cells[5].Value.ToString();
+            txtIniciales.Text = dgvCont.SelectedRows[0].Cells[6].Value.ToString();
+            txtCasa.Text = dgvCont.SelectedRows[0].Cells[7].Value.ToString();
+            txtCell.Text = dgvCont.SelectedRows[0].Cells[8].Value.ToString();
+            txtEmail.Text = dgvCont.SelectedRows[0].Cells[9].Value.ToString();
+            txtNota.Text = dgvCont.SelectedRows[0].Cells[10].Value.ToString();
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtEdit_Click(object sender, EventArgs e)
+        {
+            Int64 NUMERO2;
+            NUMERO2 = Int64.Parse(txtCasa.Text);
+            Int64 NUMERO1;
+            NUMERO1 = Int64.Parse(txtCell.Text);
+            string correo = txtEmail.Text;
+            string queri = "Update edita set Apodo = @Apodo,Nombre1 = @Nombre1,Nombre2= @Nombre2,Apellidos = @Apellidos,Profesion = @Profesion, Iniciales = @Iniciales, Telefono1 = @Telefono1, Telefon2 = @Telefon2, Correo = @Correo, Nota = @Nota where Id = @Id";
+            SqlCommand comando = new SqlCommand(queri, agendota);
+            comando.Parameters.AddWithValue("@Apodo", txtApodo.Text);
+            comando.Parameters.AddWithValue("@Nombre1", txtNombre1.Text);
+            comando.Parameters.AddWithValue("@Nombre2", txtNombre2.Text);
+            comando.Parameters.AddWithValue("@Apellidos", txtApellidos.Text);
+            comando.Parameters.AddWithValue("@Profesion", txtProfesion.Text);
+            comando.Parameters.AddWithValue("@Iniciales", txtIniciales.Text);
+            comando.Parameters.AddWithValue("@Telefono1", NUMERO2);
+            comando.Parameters.AddWithValue("@Telefon2", NUMERO1);
+            comando.Parameters.AddWithValue("@Correo", correo);
+            comando.Parameters.AddWithValue("@Nota", txtIniciales.Text);
+            comando.Parameters.AddWithValue("@Id", txtId.Text);
+            comando.ExecuteNonQuery();
+
+
+            MessageBox.Show("Editado");
+            obtener();
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
