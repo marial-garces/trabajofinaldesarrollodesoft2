@@ -26,6 +26,9 @@ namespace proyecto_final
             Openform.Show();
         }
 
-        
+        private void BusquedaContantoCB_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
