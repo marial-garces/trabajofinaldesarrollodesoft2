@@ -16,6 +16,28 @@ namespace proyecto_final
         static string agendotastring = "data source = LAPTOP-8HDRD3GH\\SQLEXPRESS; database= agendota; integrated security= true";
         SqlConnection agendota = new SqlConnection(agendotastring);
 
+        private void obtener()
+        {
+             if (txtBuscar.Text == "")
+             {
+                 string query = "select * from edita";
+                SqlCommand agendototica = new SqlCommand(query, agendota);
+                 SqlDataAdapter data = new SqlDataAdapter(agendototica);
+                 DataTable editica = new DataTable();
+                 data.Fill(editica);
+                 dgvCont.DataSource = editica;
+             }
+             else
+             {
+                 string query = "select * from edita where Nombre ='" + txtBuscar.Text + "'";
+                SqlCommand agendototica = new SqlCommand(query, agendota);
+                 SqlDataAdapter data = new SqlDataAdapter(agendototica);
+                 DataTable editica = new DataTable();
+                 data.Fill(editica);
+                 dgvCont.DataSource = editica;
+             }
+        }
+
         public Edita()
         {
             InitializeComponent();
@@ -23,6 +45,8 @@ namespace proyecto_final
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            obtener();
+           agendota.Open();
 
         }
 
@@ -153,11 +177,19 @@ namespace proyecto_final
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string agendotica = "Insert into edita ([Apodo] ,[Nombre1] ,[Nombre2] ,[Apellidos], [Profesion], [Iniciales], [Telefono1], [Telefono2], [Correo], [Nota]) " +
-                " values ('"+txtApodo+"','"+txtNombre1+"','"+txtNombre2+"','"+txtApellidos+"','"+txtProfesion+"','"+txtIniciales+ "','"+txtCasa+ "','"+txtCell+ "','"+txtEmail+ "','"+txtNota+"')";
+       
+            string correo = txtEmail.Text;
+            Int64 NUMERO1;
+            NUMERO1 = Int64.Parse(txtCell.Text);
+            Int64 NUMERO2;
+            NUMERO2 = Int64.Parse(txtCasa.Text);
+
+            string agendotica = "Insert into edita ([Apodo] ,[Nombre1] ,[Nombre2] ,[Apellidos], [Profesion], [Iniciales], [Telefono1], [Telefon2], [Correo], [Nota]) " +
+                " values ('"+txtApodo.Text+"','"+txtNombre1.Text+"','"+txtNombre2.Text+"','"+txtApellidos.Text+"','"+txtProfesion.Text+"','"+txtIniciales.Text+ "','"+NUMERO2+ "','"+NUMERO1+"', '"+correo+ "','"+txtNota.Text+"')";
             SqlCommand agendototica = new SqlCommand(agendotica, agendota);
             agendototica.ExecuteNonQuery();
-            string correo = txtEmail.Text;
+
+            obtener();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -181,6 +213,16 @@ namespace proyecto_final
         }
 
         private void gbContact_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCont_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
 
         }

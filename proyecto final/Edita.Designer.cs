@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCont = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -58,7 +58,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pbPic = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCont)).BeginInit();
             this.gbContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).BeginInit();
             this.SuspendLayout();
@@ -73,14 +75,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Contact Data";
             // 
-            // dataGridView1
+            // dgvCont
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(527, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(281, 401);
-            this.dataGridView1.TabIndex = 24;
+            this.dgvCont.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCont.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCont.Location = new System.Drawing.Point(527, 130);
+            this.dgvCont.Name = "dgvCont";
+            this.dgvCont.Size = new System.Drawing.Size(496, 345);
+            this.dgvCont.TabIndex = 24;
+            this.dgvCont.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCont_CellContentClick);
             // 
             // btnAdd
             // 
@@ -118,7 +121,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(527, 481);
+            this.btnDelete.Location = new System.Drawing.Point(714, 481);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(135, 38);
             this.btnDelete.TabIndex = 39;
@@ -357,22 +360,42 @@
             this.pbPic.TabIndex = 37;
             this.pbPic.TabStop = false;
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(714, 94);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(192, 20);
+            this.txtBuscar.TabIndex = 61;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(637, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 18);
+            this.label6.TabIndex = 60;
+            this.label6.Text = "Buscar";
+            // 
             // Edita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 523);
+            this.ClientSize = new System.Drawing.Size(1035, 523);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.gbContact);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCont);
             this.Controls.Add(this.label1);
             this.Name = "Edita";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCont)).EndInit();
             this.gbContact.ResumeLayout(false);
             this.gbContact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPic)).EndInit();
@@ -384,7 +407,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCont;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
@@ -413,6 +436,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbPic;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label6;
     }
 }
 
