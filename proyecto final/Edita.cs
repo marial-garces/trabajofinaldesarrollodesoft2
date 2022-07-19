@@ -161,5 +161,9 @@ namespace proyecto_final
             obtener();
         }
 
+        private void btnGoBack_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

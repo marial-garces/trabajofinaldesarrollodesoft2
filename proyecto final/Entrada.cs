@@ -41,5 +41,15 @@ namespace proyecto_final
         {
             Environment.Exit(0);
         }
+
+        private void ContactosGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BusquedaContantoCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
