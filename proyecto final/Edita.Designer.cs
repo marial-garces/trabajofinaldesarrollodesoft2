@@ -71,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(61, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 59);
             this.label1.TabIndex = 0;
@@ -82,7 +82,7 @@
             this.dgvCont.BackgroundColor = System.Drawing.Color.Lavender;
             this.dgvCont.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCont.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCont.Location = new System.Drawing.Point(527, 130);
+            this.dgvCont.Location = new System.Drawing.Point(652, 106);
             this.dgvCont.Name = "dgvCont";
             this.dgvCont.Size = new System.Drawing.Size(496, 345);
             this.dgvCont.TabIndex = 24;
@@ -93,7 +93,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnAdd.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(12, 481);
+            this.btnAdd.Location = new System.Drawing.Point(106, 481);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(135, 38);
             this.btnAdd.TabIndex = 36;
@@ -106,7 +106,7 @@
             this.btnSave.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(153, 481);
+            this.btnSave.Location = new System.Drawing.Point(247, 481);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 38);
             this.btnSave.TabIndex = 37;
@@ -119,7 +119,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.SkyBlue;
             this.btnCancel.Enabled = false;
             this.btnCancel.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(294, 481);
+            this.btnCancel.Location = new System.Drawing.Point(388, 481);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 38);
             this.btnCancel.TabIndex = 38;
@@ -131,7 +131,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.MistyRose;
             this.btnDelete.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(888, 481);
+            this.btnDelete.Location = new System.Drawing.Point(961, 481);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(135, 38);
             this.btnDelete.TabIndex = 39;
@@ -164,7 +164,7 @@
             this.gbContact.Controls.Add(this.label2);
             this.gbContact.Controls.Add(this.pbPic);
             this.gbContact.Enabled = false;
-            this.gbContact.Location = new System.Drawing.Point(13, 74);
+            this.gbContact.Location = new System.Drawing.Point(62, 74);
             this.gbContact.Name = "gbContact";
             this.gbContact.Size = new System.Drawing.Size(508, 401);
             this.gbContact.TabIndex = 40;
@@ -364,7 +364,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(714, 94);
+            this.txtBuscar.Location = new System.Drawing.Point(853, 83);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(192, 20);
             this.txtBuscar.TabIndex = 61;
@@ -374,7 +374,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(637, 96);
+            this.label6.Location = new System.Drawing.Point(776, 85);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 60;
@@ -382,7 +382,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(810, 492);
+            this.txtId.Location = new System.Drawing.Point(883, 492);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(63, 20);
             this.txtId.TabIndex = 60;
@@ -391,7 +391,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(784, 494);
+            this.label10.Location = new System.Drawing.Point(857, 494);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 18);
             this.label10.TabIndex = 60;
@@ -401,7 +401,7 @@
             // 
             this.txtEdit.BackColor = System.Drawing.Color.PaleGreen;
             this.txtEdit.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdit.Location = new System.Drawing.Point(640, 481);
+            this.txtEdit.Location = new System.Drawing.Point(713, 481);
             this.txtEdit.Name = "txtEdit";
             this.txtEdit.Size = new System.Drawing.Size(135, 38);
             this.txtEdit.TabIndex = 62;
@@ -414,7 +414,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
-            this.ClientSize = new System.Drawing.Size(1035, 523);
+            this.ClientSize = new System.Drawing.Size(1217, 523);
             this.Controls.Add(this.txtEdit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtId);
